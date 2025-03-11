@@ -1,0 +1,40 @@
+---
+const text = "Shiny text <3"; // Dynamic text
+---
+
+<style>
+@keyframes shine {
+  0% { background-position: 100% 0; opacity: 0; } /* Start off-screen & invisible */
+  10% { opacity: 1; } /* Gradually appear */
+  90% { opacity: 1; } /* Stay visible */
+  100% { background-position: 0% 0; opacity: 0; } /* Move off-screen & fade out */
+}
+
+.shiny-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: transparent; /* Make text transparent */
+  background: linear-gradient(
+    90deg,
+    transparent 0%,    /* Transparent */
+    transparent 40%,   /* Transparent */
+    #ddd 45%,          /* Bright highlight */
+    #fff 47%,          /* Brightest part */
+    #ddd 49%,          /* Bright highlight */
+    transparent 55%,   /* Transparent */
+    transparent 100%   /* Transparent */
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 7s ease-in-out infinite;
+  font-family: var(--primary-font);
+}
+</style>
+
+<h1 class="shiny-text">{text}</h1>

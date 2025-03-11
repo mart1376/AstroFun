@@ -1,0 +1,54 @@
+---
+const createNeonEffect = (button: HTMLButtonElement, color = "#000", glowSize = "30px") => {
+  button.style.position = "relative";
+  button.style.overflow = "hidden";
+  button.style.color = color;
+  button.style.boxShadow = `0 0 ${glowSize} ${color}`;
+  button.style.transition = "0.3s ease-in-out";
+};
+---
+
+<style>
+
+@keyframes neon-glow {
+  0% {
+    box-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--glow-color), 0 0 10px var(--glow-color);
+  }
+}
+
+.neon-button {
+  --glow-color: #FF10F0; /* Make sure buttons have this variable */
+display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  background: var(--glow-color);
+  -webkit-backdrop-filter: blur(9.5px);
+  border-radius: 10px;
+  border-color: #FF10F0;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+  animation: neon-glow 1.5s infinite;
+color: #fff;
+    border: none;
+
+}
+
+
+.neon-button:hover {
+  color: #fff;
+  scale: 1.1;
+  animation: neon-glow 0.5s infinite;
+}
+</style>
+
+<button class="neon-button">Neon Button</button>

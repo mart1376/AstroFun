@@ -1,11 +1,58 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import FlippingCard from '../components/FlippingCard.astro';
+import NeonButton from '../components/NeonButton.astro';
+import ShinyText from '../components/ShinyText.astro';
+import NavBar from '../components/NavBar.astro';
+import GlitchButton from '../components/GlitchButton.astro';
+import SkipDownText from '../components/SkipDownText.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
 ---
 
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-flow: dense;
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-item {
+  background: var(--color-space-gradient);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--color-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.grid-item:nth-child(2) { grid-column: span 1; grid-row: span 2; }
+.grid-item:nth-child(3) { grid-column: span 1; grid-row: span 1; }
+.grid-item:nth-child(4) { grid-column: span 2; grid-row: span 2; }
+</style>
+
 <Layout>
-	<Welcome />
+	<NavBar />
+	<div class="grid-container">
+		<div class="grid-item">
+			<ShinyText />
+		</div>
+		<div class="grid-item">
+			<h1>Welcome to <SkipDownText titles={["NM.Dev", "Nexgen", "Your Future"]} /></h1>
+		</div>
+		<div class="grid-item">
+			<NeonButton />
+		</div>
+		<div class="grid-item">
+			<GlitchButton />
+		</div>
+		<div class="grid-item">
+			<FlippingCard />
+		</div>
+	</div>
 </Layout>
+

@@ -1,0 +1,35 @@
+<!--
+Random Dog Image from RandomDog API
+Inserted into Layout.astro
+-->
+
+<div class="dog-bg" id="dog-bg"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const fetchDogImage = async () => {
+      const response = await fetch('https://dog.ceo/api/breeds/image/random');
+      const data = await response.json();
+      return data.message;
+    };
+
+    const dogImage = await fetchDogImage(); // Fetch one image
+    const bg = document.getElementById('dog-bg');
+    if (bg) {
+      bg.style.backgroundImage = `url(${dogImage})`;
+    }
+  });
+</script>
+
+<style>
+  .dog-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+</style>

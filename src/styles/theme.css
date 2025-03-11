@@ -1,0 +1,41 @@
+:root {
+    --primary-color: #FF10F0;
+    --secondary-color: #0ff;
+    --background-color: #000;
+    --text-color: #fff;
+    --primary-font: 'Hubot Sans', sans-serif;
+
+     --color-background: #0D0D0D; /* Deep black for the main background */
+     --color-surface: #1A1A1A; /* Slightly lighter black for sections */
+     --color-text-primary: #E0E0E0; /* Soft white for primary text */
+     --color-text-secondary: #B0B0B0; /* Muted gray for secondary text */
+     --color-accent: #0092DE; /* Electric blue for CTAs, highlights */
+     --color-accent-hover: #007BBF; /* Slightly darker blue for hover effects */
+    --color-warning: #F2A900; /* Gold for premium feel and highlights */
+    --color-error: #FF007F; /* Neon magenta for errors or standout elements */
+    --color-border: #292929; /* Subtle gray for dividers */
+    --color-shadow: rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    --color-space-gradient: radial-gradient(circle at 30% 30%, 
+    #1a1a2e 10%, 
+    #16213e 30%,
+    #092241 50%, 
+    #2a3a43 70%, 
+    #00293f 90%);
+    --color-linear-gradient: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(85,85,85,1) 100%);
+    --color-graphite-gradient: linear-gradient(180deg,  
+    #3A3A3A 0%,  
+    #1F1F1F 50%, 
+    #0D0D0D 100% 
+    );
+    --glass-background: rgba( 255, 255, 255, 0.25 );
+--glass-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+--glass-filter: blur( 1.5px );
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--primary-font);
+}
+
+
